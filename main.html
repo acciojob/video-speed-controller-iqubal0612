@@ -2,33 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Video Speed Scrubber</title>
+  <title>Video Speed Controller</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="wrapper">
-    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" controls></video>
-    <div class="speed">
-      <div class="speed-bar">1×</div>
-    </div>
+  <!-- Video Player -->
+  <video
+    class="player__video"
+    src="https://www.w3schools.com/html/mov_bbb.mp4">
+  </video>
+
+  <!-- Play / Pause Button -->
+  <button class="player__button toggle">►</button>
+
+  <!-- Progress Bar -->
+  <div class="progress">
+    <div class="progress__filled"></div>
   </div>
-	<video class="viewer" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
-<button class="player__button toggle">►</button>
 
-<div class="progress">
-  <div class="progress__filled"></div>
-</div>
+  <!-- Volume Control -->
+  <input
+    type="range"
+    name="volume"
+    min="0"
+    max="1"
+    step="0.05"
+    value="1">
 
-<input type="range" name="volume" min="0" max="1" step="0.05">
-<input type="range" name="playbackRate" min="0.5" max="2" step="0.1">
+  <!-- Playback Speed Control -->
+  <input
+    type="range"
+    name="playbackRate"
+    min="0.5"
+    max="2"
+    step="0.1"
+    value="1">
 
-<button data-skip="-10">« 10s</button>
-<button data-skip="25">25s »</button>
+  <!-- Skip Buttons -->
+  <button class="rewind" data-skip="-10">« 10s</button>
+  <button class="forward" data-skip="25">25s »</button>
 
+  <!-- Script -->
+  <script src="./script.js"></script>
 
-<script  src="./script.js">
-  //Your code goes here
-</script>
 </body>
 </html>
